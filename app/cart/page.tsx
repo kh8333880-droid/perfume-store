@@ -22,25 +22,14 @@ export default function CartPage() {
 
      {cart.length === 0 ? (
  <div className="bg-zinc-900 rounded-xl p-6">
-  <h2 className="text-3xl font-bold text-yellow-400">
-    Total: {total} EGP
-  </h2>
+  <p>Your cart is empty.</p>
 
-  <div className="flex gap-4 mt-6">
-    <Link
-      href="/products"
-      className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-xl font-bold hover:bg-yellow-400 hover:text-black transition"
-    >
-      ← Continue Shopping
-    </Link>
-
-    <Link
-      href="/checkout"
-      className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-bold hover:bg-yellow-300 transition"
-    >
-      Checkout →
-    </Link>
-  </div>
+  <Link
+    href="/products"
+    className="mt-6 inline-block bg-yellow-400 text-black px-6 py-2 rounded-lg font-bold"
+  >
+    Continue Shopping
+  </Link>
 </div>
 ) : (
         <div className="space-y-6">
@@ -96,17 +85,28 @@ export default function CartPage() {
           ))}
 
           <div className="bg-zinc-900 rounded-xl p-6">
-            <h2 className="text-3xl font-bold text-yellow-400">
-              Total: {total} EGP
-            </h2>
+  <h2 className="text-3xl font-bold text-yellow-400">
+    Total: {total} EGP
+  </h2>
 
-            <Link
-              href="/checkout"
-              className="mt-6 inline-block bg-yellow-400 text-black px-8 py-3 rounded-xl font-bold hover:bg-yellow-300 transition"
-            >
-              Checkout
-            </Link>
-          </div>
+  <div className="flex gap-4 mt-6">
+
+    <Link
+      href="/products"
+      className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-xl font-bold hover:bg-yellow-400 hover:text-black transition"
+    >
+      ← Continue Shopping
+    </Link>
+
+    <Link
+      href="/checkout"
+      className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-bold hover:bg-yellow-300 transition"
+    >
+      Checkout →
+    </Link>
+
+  </div>
+</div>
         </div>
       )}
     </div>
