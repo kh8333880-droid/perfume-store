@@ -21,27 +21,25 @@ export default function CartPage() {
       </h1>
 
      {cart.length === 0 ? (
-  <div className="bg-zinc-900 rounded-xl p-6">
+ <div className="bg-zinc-900 rounded-xl p-6">
   <h2 className="text-3xl font-bold text-yellow-400">
     Total: {total} EGP
   </h2>
 
   <div className="flex gap-4 mt-6">
-
     <Link
       href="/products"
-      className="px-8 py-3 rounded-xl border-2 border-yellow-400 text-yellow-400 font-bold hover:bg-yellow-400 hover:text-black transition"
+      className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-xl font-bold hover:bg-yellow-400 hover:text-black transition"
     >
       ← Continue Shopping
     </Link>
 
     <Link
       href="/checkout"
-      className="px-8 py-3 rounded-xl bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition"
+      className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-bold hover:bg-yellow-300 transition"
     >
       Checkout →
     </Link>
-
   </div>
 </div>
 ) : (
