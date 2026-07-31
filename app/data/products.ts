@@ -215,7 +215,7 @@ export const products = [
  {
   id: "kahlilan",
   name: "Kahlilan",
-  brand: "Assaf",
+  brand:  "DKHOONE",
   price: 1650,
   image: "/kahlilan.png",
 
@@ -249,7 +249,7 @@ export const products = [
  {
   id: "signature-white",
   name: "Signature White",
-  brand: "Laverne",
+  brand:  "DKHOONE",
   price: 1650,
   image: "/signature-white.png",
 
