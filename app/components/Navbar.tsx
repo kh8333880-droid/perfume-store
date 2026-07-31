@@ -26,16 +26,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
         <Link
-          href="/products"
-          className="text-2xl font-bold tracking-widest text-yellow-400"
-        >
-          PERFUMER
-        </Link>
+         href="/"
+         className="text-2xl font-bold tracking-widest text-yellow-400"
+>
+         PERFUMER
+         </Link>
 
         <div className="flex items-center gap-8 text-sm font-medium">
-          <Link href="/products" className="hover:text-yellow-400 transition">
-            Home
-          </Link>
+          <Link href="/" className="hover:text-yellow-400 transition">
+          Home
+         </Link>
 
           <Link href="/products" className="hover:text-yellow-400 transition">
             Shop
