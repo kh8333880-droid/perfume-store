@@ -65,39 +65,71 @@ if (!product) {
             </p>
 
             <div id="notes" className="mt-10 grid grid-cols-3 gap-5">
-              <div>
-                <h3 className="font-bold">Top</h3>
-                <p>
-                  Bergamot
-                  <br />
-                  Citrus
-                  <br />
-                  White Flowers
-                </p>
-              </div>
 
-              <div>
-                <h3 className="font-bold">Heart</h3>
-                <p>
-                  Jasmine
-                  <br />
-                  Rose
-                  <br />
-                  Orange Blossom
-                </p>
-              </div>
+  <div>
+    <h3 className="font-bold mb-2">Top</h3>
 
-              <div>
-                <h3 className="font-bold">Base</h3>
-                <p>
-                  White Musk
-                  <br />
-                  Vanilla
-                  <br />
-                  Sandalwood
-                </p>
-              </div>
-            </div>
+    <p>
+      {product.topNotes.map((note) => (
+        <span key={note}>
+          {note}
+          <br />
+        </span>
+      ))}
+    </p>
+  </div>
+
+  <div>
+    <h3 className="font-bold mb-2">Heart</h3>
+
+    <p>
+      {product.heartNotes.map((note) => (
+        <span key={note}>
+          {note}
+          <br />
+        </span>
+      ))}
+    </p>
+  </div>
+
+  <div>
+    <h3 className="font-bold mb-2">Base</h3>
+
+    <p>
+      {product.baseNotes.map((note) => (
+        <span key={note}>
+          {note}
+          <br />
+        </span>
+      ))}
+    </p>
+  </div>
+
+</div>
+
+<div className="mt-10 grid md:grid-cols-2 gap-6">
+
+  <div className="bg-neutral-900 rounded-xl p-5">
+    <h4 className="text-yellow-400 font-bold">Sillage</h4>
+    <p>{product.sillage}</p>
+  </div>
+
+  <div className="bg-neutral-900 rounded-xl p-5">
+    <h4 className="text-yellow-400 font-bold">Longevity</h4>
+    <p>{product.longevity}</p>
+  </div>
+
+  <div className="bg-neutral-900 rounded-xl p-5">
+    <h4 className="text-yellow-400 font-bold">Occasion</h4>
+    <p>{product.occasion}</p>
+  </div>
+
+  <div className="bg-neutral-900 rounded-xl p-5">
+    <h4 className="text-yellow-400 font-bold">Category</h4>
+    <p>{product.category}</p>
+  </div>
+
+</div>
 
             <div id="buy" className="mt-10">
               <h2 className="text-5xl font-bold text-yellow-400">
