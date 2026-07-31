@@ -111,9 +111,9 @@ export default function AdminPage() {
                 {order.customer.name}
               </h2>
 
-              <p>📞 {order.customer.phone}</p>
-              <p>📍 {order.customer.governorate}</p>
-              <p>{order.customer.address}</p>
+             <p>📧 {order.customer.email}</p>
+             <p>📞 {order.customer.phone}</p>
+             <p>📍 {order.customer.governorate}</p>
 
               {order.customer.notes && (
                 <p className="mt-2">

@@ -16,6 +16,7 @@ export default function CheckoutPage() {
 
   const [form, setForm] = useState({
     name: "",
+    email: "",
     phone: "",
     governorate: "",
     address: "",
@@ -34,6 +35,7 @@ export default function CheckoutPage() {
   const placeOrder = async () => {
     if (
       !form.name ||
+      !form.email ||
       !form.phone ||
       !form.governorate ||
       !form.address
@@ -52,6 +54,7 @@ export default function CheckoutPage() {
         customer: form,
         cart,
         total,
+        status: "Pending",
         createdAt: new Date(),
       });
 
@@ -59,6 +62,7 @@ export default function CheckoutPage() {
 
       setForm({
         name: "",
+        email: "",
         phone: "",
         governorate: "",
         address: "",
@@ -87,6 +91,15 @@ export default function CheckoutPage() {
             name="name"
             placeholder="Full Name"
             value={form.name}
+            onChange={handleChange}
+            className="w-full p-4 rounded-lg bg-zinc-800 outline-none"
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={form.email}
             onChange={handleChange}
             className="w-full p-4 rounded-lg bg-zinc-800 outline-none"
           />
