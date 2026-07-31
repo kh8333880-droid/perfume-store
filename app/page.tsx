@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <Navbar />
+      
       <BrandSlider />
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 py-24 flex flex-col items-center text-center">
