@@ -1,18 +1,71 @@
 export const products = [
   {
-    id: "arrogate-girl",
-    name: "Arrogate Girl",
-    brand: "Assaf",
-    price: 2200,
-    image: "/arrogate-girl.png",
-  },
+  id: "arrogate-girl",
+  name: "Arrogate Girl",
+  brand: "Assaf",
+  price: 2200,
+  image: "/arrogate-girl.png",
+
+  topNotes: [
+    "Bergamot",
+    "Pear",
+    "Pink Pepper",
+  ],
+
+  heartNotes: [
+    "Jasmine",
+    "Rose",
+    "Peony",
+  ],
+
+  baseNotes: [
+    "Musk",
+    "Vanilla",
+    "Sandalwood",
+    "Patchouli",
+  ],
+
+  sillage: "Medium to Strong",
+
+  longevity: "6-8 Hours",
+
+  occasion: "Winter • Autumn • Evening • Special Occasions",
+
+  category: "Luxury Floral Feminine",
+},
   {
-    id: "arrogate-pink",
-    name: "Arrogate Pink",
-    brand: "Assaf",
-    price: 2000,
-    image: "/arrogate-pink.png",
-  },
+  id: "arrogate-pink",
+  name: "Arrogate Pink",
+  brand: "Assaf",
+  price: 2000,
+  image: "/arrogate-pink.png",
+
+  topNotes: [
+    "Strawberry",
+    "Red Berries",
+    "Bergamot",
+  ],
+
+  heartNotes: [
+    "Rose",
+    "Jasmine",
+    "Peony",
+  ],
+
+  baseNotes: [
+    "White Musk",
+    "Vanilla",
+    "Light Amber",
+  ],
+
+  sillage: "Medium",
+
+  longevity: "5-7 Hours",
+
+  occasion: "Spring • Summer • Daily Wear • Daytime",
+
+  category: "Soft Fruity Floral",
+},
   {
     id: "arrogate-pink-diva",
     name: "Arrogate Pink Diva",
