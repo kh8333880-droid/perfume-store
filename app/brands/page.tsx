@@ -4,23 +4,23 @@ import Image from "next/image";
 const brands = [
   {
     name: "Assaf",
-    image: "/brands/assaf.png",
+    image: "/assaf.png",
   },
   {
     name: "Laverne",
-    image: "/brands/laverne.png",
+    image: "/laverne.png",
   },
   {
     name: "Reef",
-    image: "/brands/reef.png",
+    image: "/reef.png",
   },
   {
     name: "DKHOONE",
-    image: "/brands/dkhoone.png",
+    image: "/dkhoone.png",
   },
   {
     name: "Ibraq",
-    image: "/brands/ibraq.png",
+    image: "/ibraq.png",
   },
 ];
 
