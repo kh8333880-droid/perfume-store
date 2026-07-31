@@ -37,14 +37,14 @@ export const products = [
   {
     id: "kahlilan",
     name: "Kahlilan",
-    brand: "Dukhni",
+    brand: "DKHOONE",
     price: 1650,
     image: "/kahlilan.png",
   },
   {
     id: "pearl-musk",
     name: "Pearl Musk",
-    brand: "Dukhni",
+    brand: "DKHOONE",
     price: 1650,
     image: "/pearl-musk.png",
   },
