@@ -2,14 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { products } from "./data/products";
-
+import BrandSlider from "./components/BrandSlider";
 export default function Home() {
-  const featured = products.slice(0, 4);
+  const featured = products;
 
   return (
     <main className="min-h-screen bg-black text-white">
       <Navbar />
-
+      <BrandSlider />
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 py-24 flex flex-col items-center text-center">
         <Image
