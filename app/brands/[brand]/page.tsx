@@ -2,24 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/app/data/products";
 
-export default function BrandPage({
+export default async function BrandPage({
   params,
 }: {
-  params: { brand: string };
+  params: Promise<{ brand: string }>;
 }) {
+  const { brand } = await params;
+
   const filteredProducts = products.filter(
-    (product) =>
-      product.brand.toLowerCase() === params.brand.toLowerCase()
+    (product) => product.brand.toLowerCase() === brand.toLowerCase()
   );
 
   return (
     <main className="min-h-screen bg-black text-white px-6 py-16">
       <h1 className="text-5xl font-bold text-center text-yellow-400 mb-12">
-        {params.brand.toUpperCase()}
+        {brand.toUpperCase()}
       </h1>
 
       {filteredProducts.length === 0 ? (
-        <p className="text-center text-gray-400">
+        <p className="text-center text-gray-400 text-xl">
           No products found.
         </p>
       ) : (
