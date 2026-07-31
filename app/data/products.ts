@@ -28,6 +28,13 @@ export const products = [
     image: "/laverne-sense.png",
   },
   {
+    id: "box-extreme-laverne",
+    name: "Box Extreme Laverne",
+    brand: "Laverne",
+    price: 3500,
+    image: "/box-extreme-laverne.png",
+  },
+  {
     id: "box-moon-abrag",
     name: "Box Moon Abrag",
     brand: "Ibraq",
@@ -42,17 +49,17 @@ export const products = [
     image: "/kahlilan.png",
   },
   {
+    id: "signature-white",
+    name: "Signature White",
+    brand: "DKHOONE",
+    price: 2200,
+    image: "/signature-white.png",
+  },
+  {
     id: "pearl-musk",
     name: "Pearl Musk",
     brand: "Reef",
     price: 1650,
     image: "/pearl-musk.png",
-  },
-  {
-    id: "box-extreme-laverne",
-    name: "Box Extreme Laverne",
-    brand: "Laverne",
-    price: 3500,
-    image: "/box-extreme-laverne.png",
   },
 ];
