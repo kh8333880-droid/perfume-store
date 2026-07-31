@@ -44,7 +44,7 @@ export const products = [
   {
     id: "pearl-musk",
     name: "Pearl Musk",
-    brand: "DKHOONE",
+    brand: "Reef",
     price: 1650,
     image: "/pearl-musk.png",
   },
