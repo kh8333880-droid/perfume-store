@@ -1,15 +1,53 @@
+"use client";
+
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Link from "next/link";
-import {
-  FaInstagram,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "Perfumer.eg@gmail.com",
+        "template_xrtxw7a",
+        {
+          name,
+          email,
+          phone,
+          message,
+        },
+        "cS-dbqTKonoKjCGZO"
+      );
+
+      alert("Message sent successfully!");
+
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to send message.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <main className="min-h-screen bg-black text-white">
 
-      {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 py-20 text-center">
 
         <h1 className="text-5xl md:text-6xl font-extrabold text-yellow-400">
@@ -23,8 +61,6 @@ export default function ContactPage() {
 
       </section>
 
-      {/* Contact Cards */}
-
       <section className="max-w-7xl mx-auto px-6">
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -33,12 +69,9 @@ export default function ContactPage() {
             href="https://www.instagram.com/perfumer_eg?igsh=MTN3azAwYXNsa3l5Yg=="
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-neutral-900 rounded-3xl border border-zinc-800 p-8 hover:border-pink-500 hover:-translate-y-2 transition-all duration-300"
+            className="bg-neutral-900 rounded-3xl border border-zinc-800 p-8 hover:border-pink-500 hover:-translate-y-2 transition-all"
           >
-            <FaInstagram
-              size={45}
-              className="text-pink-500 mb-6"
-            />
+            <FaInstagram size={45} className="text-pink-500 mb-6" />
 
             <h3 className="text-2xl font-bold">
               Instagram
@@ -54,12 +87,9 @@ export default function ContactPage() {
             href="https://wa.me/201113229333"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-neutral-900 rounded-3xl border border-zinc-800 p-8 hover:border-green-500 hover:-translate-y-2 transition-all duration-300"
+            className="bg-neutral-900 rounded-3xl border border-zinc-800 p-8 hover:border-green-500 hover:-translate-y-2 transition-all"
           >
-            <FaWhatsapp
-              size={45}
-              className="text-green-500 mb-6"
-            />
+            <FaWhatsapp size={45} className="text-green-500 mb-6" />
 
             <h3 className="text-2xl font-bold">
               WhatsApp
@@ -73,12 +103,9 @@ export default function ContactPage() {
 
           <a
             href="mailto:Perfumer.eg@gmail.com"
-            className="bg-neutral-900 rounded-3xl border border-zinc-800 p-8 hover:border-blue-500 hover:-translate-y-2 transition-all duration-300"
+            className="bg-neutral-900 rounded-3xl border border-zinc-800 p-8 hover:border-blue-500 hover:-translate-y-2 transition-all"
           >
-            <MdEmail
-              size={45}
-              className="text-blue-500 mb-6"
-            />
+            <MdEmail size={45} className="text-blue-500 mb-6" />
 
             <h3 className="text-2xl font-bold">
               Email
@@ -94,45 +121,55 @@ export default function ContactPage() {
 
       </section>
 
-      {/* Contact Form */}
-
       <section className="max-w-4xl mx-auto px-6 py-20">
 
         <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
           Send Us a Message
         </h2>
 
-        <form className="space-y-6">
+        <form onSubmit={sendEmail} className="space-y-6">
 
           <input
             type="text"
             placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
             className="w-full bg-neutral-900 border border-zinc-700 rounded-xl p-4 outline-none focus:border-yellow-400"
           />
 
           <input
             type="email"
             placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
             className="w-full bg-neutral-900 border border-zinc-700 rounded-xl p-4 outline-none focus:border-yellow-400"
           />
 
           <input
             type="tel"
             placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
             className="w-full bg-neutral-900 border border-zinc-700 rounded-xl p-4 outline-none focus:border-yellow-400"
           />
 
           <textarea
             rows={6}
             placeholder="Your Message..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
             className="w-full bg-neutral-900 border border-zinc-700 rounded-xl p-4 outline-none focus:border-yellow-400"
           />
-
-          <button
+                    <button
             type="submit"
-            className="w-full bg-yellow-400 text-black py-4 rounded-xl font-bold hover:bg-yellow-300 transition"
+            disabled={loading}
+            className="w-full bg-yellow-400 text-black py-4 rounded-xl font-bold hover:bg-yellow-300 transition disabled:opacity-50"
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </button>
 
         </form>
