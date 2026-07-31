@@ -52,7 +52,7 @@ export const products = [
     id: "signature-white",
     name: "Signature White",
     brand: "DKHOONE",
-    price: 2200,
+    price: 1650,
     image: "/signature-white.png",
   },
   {
