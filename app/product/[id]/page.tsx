@@ -1,5 +1,5 @@
 "use client";
-
+import { products } from "@/app/data/products";
 import { useContext } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
@@ -9,16 +9,11 @@ export default function SignatureWhite() {
   const { addToCart } = useContext(CartContext);
 const router = useRouter();
 const { id } = useParams();
-const prices: Record<string, number> = {
-  "arrogate-girl": 2200,
-  "arrogate-pink": 2000,
-  "arrogate-pink-diva": 2000,
-  "laverne-sense": 2000,
-  "box-moon-abrag": 3200,
-  "kahlilan": 1650,
-  "pearl-musk": 1650,
-  "box-extreme-laverne": 3500,
-};
+const product = products.find((p) => p.id === String(id));
+
+if (!product) {
+  return <div className="text-white p-10">Product not found</div>;
+}
   return (
     <main className="min-h-screen bg-black text-white">
       <nav className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur border-b border-neutral-800 z-50">
@@ -47,8 +42,8 @@ const prices: Record<string, number> = {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="flex justify-center">
             <Image
-             src={`/${id}.png`}
-              alt={String(id)}
+             src={product.image}
+              alt={product.name}
               width={420}
               height={620}
               priority
@@ -61,7 +56,7 @@ const prices: Record<string, number> = {
             </p>
 
             <h1 className="text-6xl font-extrabold mb-6 capitalize">
-           {String(id).replaceAll("-", " ")}
+           {product.name}
            </h1>
 
             <p className="text-neutral-300 text-xl leading-9">
@@ -106,23 +101,34 @@ const prices: Record<string, number> = {
 
             <div id="buy" className="mt-10">
               <h2 className="text-5xl font-bold text-yellow-400">
-             {prices[String(id)]} EGP
+             {product.price} EGP
             </h2>
 
               <div className="flex gap-4 mt-6">
-                <button className="bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold">
-                  Buy Now
-                </button>
+                <button
+  onClick={() => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+    });
 
+    router.push("/checkout");
+  }}
+      className="bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-yellow-300 transition"
+>
+       Buy Now
+      </button>
                 <button
   onClick={() => {
     
     addToCart({
-      id: String(id),
-      name: String(id).replaceAll("-", " "),
-      price: prices[String(id)],
-      image: `/${id}.png`,
-    });
+  id: product.id,
+  name: product.name,
+  price: product.price,
+  image: product.image,
+});
 
     router.push("/cart");
   }}
