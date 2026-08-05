@@ -59,10 +59,9 @@ if (!product) {
            {product.name}
            </h1>
 
-            <p className="text-neutral-300 text-xl leading-9">
-              A luxurious feminine fragrance combining sparkling citrus,
-              elegant white flowers, jasmine and creamy sandalwood.
-            </p>
+           <p className="text-neutral-300 text-xl leading-9">
+  A luxurious fragrance crafted with premium ingredients.
+</p>
 
             <div id="notes" className="mt-10 grid grid-cols-3 gap-5">
 
@@ -138,8 +137,8 @@ if (!product) {
 
               <div className="flex gap-4 mt-6">
                 <button
-  onClick={() => {
-    addToCart({
+           onClick={() => {
+            addToCart({
       id: product.id,
       name: product.name,
       price: product.price,

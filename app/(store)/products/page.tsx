@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Navbar from "@/app/components/Navbar";
 import { products } from "@/app/data/products";
 
 export default function Products() {
