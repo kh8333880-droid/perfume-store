@@ -1,7 +1,7 @@
-export default function MessagesPage() {
+export default function SettingPage() {
   return (
     <div className="text-white">
-      Messages
+      Settings
     </div>
   );
 }
