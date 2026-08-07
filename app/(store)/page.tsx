@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import Navbar from "../components/Navbar";
-import { products } from "../data/products";
+
+import { products } from "@/app/data/products";
 import BrandSlider from "../components/BrandSlider";
 export default function Home() {
   const featured = products;
