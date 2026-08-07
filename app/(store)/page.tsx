@@ -1,15 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-
 import { products } from "@/app/data/products";
 import BrandSlider from "../components/BrandSlider";
+
 export default function Home() {
   const featured = products;
 
   return (
     <main className="min-h-screen bg-black text-white">
-      
       <BrandSlider />
+
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 py-24 flex flex-col items-center text-center">
         <Image
@@ -33,8 +33,7 @@ export default function Home() {
         </h2>
 
         <p className="text-gray-400 text-lg mt-4 max-w-2xl">
-          Authentic perfumes from premium brands with fast delivery all over
-          Egypt.
+          Authentic perfumes from premium brands with fast delivery all over Egypt.
         </p>
 
         <Link
